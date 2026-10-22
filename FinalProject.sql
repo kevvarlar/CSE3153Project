@@ -14,14 +14,14 @@ GO
 CREATE TABLE game_data.classes (
   class_id integer PRIMARY KEY,
   class_name varchar(30),
-  description text
+  class_description text
 );
 
 -- #5 Create players table
 CREATE TABLE game_data.players (
   player_id integer PRIMARY KEY,
   username varchar(30) NOT NULL,
-  level integer DEFAULT (0),
+  player_level integer DEFAULT (0),
   class_id integer NOT NULL,
   CONSTRAINT fk_class_id
   FOREIGN KEY (class_id)
@@ -40,7 +40,7 @@ CREATE TABLE game_data.items (
 CREATE TABLE game_data.inventories (
   player_id integer NOT NULL,
   item_id integer NOT NULL,
-  quantity integer DEFAULT(1),
+  item_quantity integer DEFAULT(1),
   CONSTRAINT fk_player_id
   FOREIGN KEY (player_id)
   REFERENCES game_data.players(player_id),
@@ -55,7 +55,7 @@ CREATE TABLE game_data.skills (
   skill_id integer PRIMARY KEY,
   skill_name varchar(30) NOT NULL,
   skill_type varchar(30),
-  description text,
+  skill_description text,
   class_id integer NOT NULL,
   CONSTRAINT fk_class_id_2
   FOREIGN KEY (class_id)
