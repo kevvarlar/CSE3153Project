@@ -13,7 +13,7 @@ GO
 -- #4 Create classes table
 CREATE TABLE game_data.classes (
   class_id integer PRIMARY KEY,
-  name varchar(30),
+  class_name varchar(30),
   description text
 );
 
@@ -53,8 +53,8 @@ CREATE TABLE game_data.inventories (
 -- #8 Create skills table
 CREATE TABLE game_data.skills (
   skill_id integer PRIMARY KEY,
-  name varchar(30) NOT NULL,
-  type varchar(30),
+  skill_name varchar(30) NOT NULL,
+  skill_type varchar(30),
   description text,
   class_id integer NOT NULL,
   CONSTRAINT fk_class_id_2
