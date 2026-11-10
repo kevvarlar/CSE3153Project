@@ -1,0 +1,7 @@
+CREATE LOGIN devuser WITH PASSWORD = '', CHECK_POLICY = OFF;
+GO
+
+USE RPG;
+CREATE USER devuser FOR LOGIN devuser;
+ALTER ROLE db_owner ADD MEMBER devuser;
+GO
