@@ -12,3 +12,8 @@ To connect to the Database
 
 5. Look under Server authentication and change it to "SQL Server and Windows Authentication mode"
 
+To run the program
+
+1. Make sure you have Maven installed, if you have not then install it.
+
+2. Run "mvn clean compile exec:java -D maven.compiler.source=21 -D maven.compiler.target=21 -D exec.mainClass="Main" in this directory.
